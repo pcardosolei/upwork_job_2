@@ -1,0 +1,28 @@
+{
+  "manifest_version": 2,
+
+  "name": "Chrome Extension - Melvin Turner",
+  "description": "Chrome Extension",
+  "version": "1.0.0.0",
+  "homepage_url": "https://google.com/",
+
+  "browser_action": {
+    "default_popup": "popup.html"
+  },
+
+  "permissions": [
+    "contextMenus"
+  ],
+
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+
+  "content_scripts": [
+    {
+    "matches": ["<all_urls>"],
+    "js": ["script.js"]
+    }
+  ]
+}
