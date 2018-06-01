@@ -1,5 +1,9 @@
 chrome.contextMenus.create({
-    id: "some-command",
-    title: "some title",
+    id: "show-info",
+    title: "Show Information",
     contexts: ["all"]
+});
+
+chrome.contextMenus.onClicked.addListener(function(info,tab) {
+  alert(info.selectionText);
 });
