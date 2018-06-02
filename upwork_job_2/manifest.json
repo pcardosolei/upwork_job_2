@@ -21,14 +21,12 @@
     "persistent": false
   },
 
-  "content_scripts": [
-    {
-      "matches": ["https://selling.autotrader.co.uk"],
-      "js": ["script.js"]
-    },
-    {
-      "matches": ["https://www.copart.co.uk/"],
-      "js": ["script2.js"]
+  "content_scripts": [{
+      "js": ["script.js"],
+      "matches": ["*://selling.autotrader.co.uk/find-car"]
+    }, {
+      "js": ["script2.js"],
+      "matches": ["*://*.copart.co.uk/"]
     }
   ]
 }
