@@ -1,3 +1,13 @@
+/*
+* Variables
+*/
+var tabNumber;
+
+/*
+  contextMenus
+*/
+
+chrome.contextMenus.removeAll();
 chrome.contextMenus.create({
     id: "show-info",
     title: "Show Information",
@@ -28,3 +38,13 @@ chrome.contextMenus.onClicked.addListener(function(info,tab) {
 chrome.tabs.onCreated.addListener(function(tab){
     alert("new tab "+tab.id);
 });
+
+
+function init(){
+  chrome.tabs.query({currentWindow: true}, function(callback){
+    tabNumber = callback.length;
+    console.log(callback);
+  });
+}
+
+init();
